@@ -1,7 +1,7 @@
 use crate::file_utils::{pad_leaf_layer, split_file_to_chunks};
 use crate::merkle_tree::MerkleTree;
-use actix_web::web::Data;
-use actix_web::{web, App, HttpResponse, HttpServer};
+
+use actix_web::{web, App, HttpServer};
 use std::collections::HashMap;
 use std::env;
 use std::io::{Error, ErrorKind};
@@ -42,7 +42,7 @@ mod tests {
     use super::*;
     use crate::handlers::{get_hashes, get_piece};
     use actix_web::{
-        http::{self, header::ContentType},
+        http::{header::ContentType},
         test, web, App,
     };
 

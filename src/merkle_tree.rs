@@ -137,7 +137,7 @@ impl MerkleTree {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::file_utils::*;
+    
 
     #[test]
     fn test_uncle_root() {

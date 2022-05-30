@@ -2,10 +2,10 @@ use crate::MerkleTree;
 use actix_web::body::BoxBody;
 use actix_web::error::ErrorBadRequest;
 use actix_web::http::header::ContentType;
-use actix_web::http::StatusCode;
-use actix_web::{web, Either, Error, HttpRequest, HttpResponse, Responder, Result};
+
+use actix_web::{web, Error, HttpRequest, HttpResponse, Responder, Result};
 use serde::Serialize;
-use serde_json::*;
+
 use std::collections::HashMap;
 
 #[derive(Serialize)]
