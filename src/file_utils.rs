@@ -14,6 +14,9 @@ fn pad_vec(data: &[u8]) -> Vec<u8> {
 }
 
 pub fn pad_leaf_layer(data: &mut Vec<Vec<u8>>) {
+    if data.len() == 0 {
+        return;
+    }
     let next_power_of_two = get_next_power_of_two(data.len());
     while data.len() < next_power_of_two {
         let payload = iter::repeat(0u8).take(32).collect();
@@ -23,6 +26,9 @@ pub fn pad_leaf_layer(data: &mut Vec<Vec<u8>>) {
 
 fn get_next_power_of_two(amount: usize) -> usize {
     let mut num = amount;
+    if num == 1 {
+        return 2;
+    }
     num -= 1;
     num |= num >> 1;
     num |= num >> 2;
